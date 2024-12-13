@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso de Hábitos</title>
+    <link rel="stylesheet" href="estilos4.css">
+</head>
+<body>
+
+    <div class="habit-tracker-screen">
+        <!-- Encabezado de la página -->
+        <div class="habit-tracker-header">
+            <h1>Rastreador de Hábitos</h1>
+            <ul>
+                <!-- Menú de navegación -->
+                <li><a href="index.html">Entrada Rapida</a></li>
+                <li><a href="revison.html">Rastreador de Hábitos</a></li>
+                <li><a href="crear_habito.html">Crear Habito</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección de Progreso Semanal -->
+        <div class="weekly-progress">
+            <h3>Esta semana</h3>
+        
+        </div>
+
+        <!-- Rutina Matutina -->
+        <section class="morning-routine">
+            <h2>Rutina Matutina</h2>
+            <div class="habit" data-completed="2" data-total="5">
+                <h3>Ejercicio</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">80%</span>
+                </div>
+                <div class="days-completed">2/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="3" data-total="5">
+                <h3>Meditación</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">40%</span>
+                </div>
+                <div class="days-completed">3/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="4" data-total="5">
+                <h3>Dieta</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">85%</span>
+                </div>
+                <div class="days-completed">4/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="3" data-total="5">
+                <h3>Escritura</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">88%</span>
+                </div>
+                <div class="days-completed">3/5 días</div>
+            </div>
+        </section>
+
+        <!-- Rutina Nocturna -->
+        <section class="evening-routine">
+            <h2>Rutina Nocturna</h2>
+            <div class="habit" data-completed="4" data-total="5">
+                <h3>Ejercicio</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">90%</span>
+                </div>
+                <div class="days-completed">4/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="1" data-total="5">
+                <h3>Meditación</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">15%</span>
+                </div>
+                <div class="days-completed">1/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="4" data-total="5">
+                <h3>Dieta</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">70%</span>
+                </div>
+                <div class="days-completed">4/5 días</div>
+            </div>
+
+            <div class="habit" data-completed="4" data-total="5">
+                <h3>Escritura</h3>
+                <div class="progress-bar">
+                    <div class="filled"></div>
+                    <span class="percentage">85%</span>
+                </div>
+                <div class="days-completed">4/5 días</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script de funcionalidad y actualizacion de las barras de progreso -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Función para actualizar las barras de progreso
+            function actualizarProgreso() {
+                const habits = document.querySelectorAll('.habit');
+                habits.forEach(habit => {
+                    const completed = habit.getAttribute('data-completed');
+                    const total = habit.getAttribute('data-total');
+                    const percentage = (completed / total) * 100;
+                    const progressBar = habit.querySelector('.filled');
+                    const percentageSpan = habit.querySelector('.percentage');
+                    const daysCompletedSpan = habit.querySelector('.days-completed');
+
+                    progressBar.style.width = `${percentage}%`; // 
+                    percentageSpan.textContent = `${percentage.toFixed(0)}%`; 
+                    daysCompletedSpan.textContent = `${completed}/${total} días`; 
+                });
+            }
+
+            // Ejecuta la función para inicializar los valores
+            actualizarProgreso();
+        });
+    </script>
+
+</body>
+</html>

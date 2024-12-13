@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Hábitos - BioHabits</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+
+<!-- Sección de encabezado -->
+<header class="header">
+    <div class="header-left">
+        <h1>Rastreo de Hábitos</h1>
+    </div>
+    <nav class="header-right">
+        <!-- Navegación en el encabezado -->
+        <ul class="header-right">
+            <li><a href="entradarapida.html">Entrada rápida</a></li>
+            <li><a href="progresodehabitos.html">Progreso de hábitos</a></li>
+            <li><a href="revision.html">Revisión</a></li>
+            <li><a href="crearhabitos.html">Crear hábitos</a></li>
+            <li><a href="notificaciones.html">🔔</a></li>
+            <li><a href="configuracion.html">⚙️</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sección principal -->
+<main class="main-section">
+    <!-- Introducción -->
+    <section class="intro">
+        <p>Hola, hagamos un seguimiento de tu bienestar para hoy.</p>
+        <button class="add-activity-btn">Agregar actividad</button>
+    </section>
+
+    <!-- Sección de hábitos -->
+    <section class="habits">
+        <!-- Ejercicio -->
+        <div class="habit">
+            <h3>Ejercicios</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 80%;"></div>
+                <span class="progress-percentage">80%</span>
+            </div>
+            <p>30 minutos</p>
+        </div>
+
+        <!-- Hidratación -->
+        <div class="habit">
+            <h3>Hidratación</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 90%;"></div>
+                <span class="progress-percentage">90%</span>
+            </div>
+            <p>4 tazas</p>
+        </div>
+
+        <!-- Dieta -->
+        <div class="habit">
+            <h3>Dieta</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 65%;"></div>
+                <span class="progress-percentage">65%</span>
+            </div>
+            <p>Comidas</p>
+        </div>
+
+        <!-- Descanso -->
+        <div class="habit">
+            <h3>Descanso</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 95%;"></div>
+                <span class="progress-percentage">95%</span>
+            </div>
+            <p>7 horas</p>
+        </div>
+    </section>
+
+    <!-- Progreso total del día -->
+    <div class="total-progress">
+        <h2>Progreso Total Hoy</h2>
+        <div class="totals">
+            <div class="total-item">
+                <span class="label">Ejercicio</span>
+                <span class="value">30 minutos</span>
+            </div>
+            <div class="total-item">
+                <span class="label">Hidratación</span>
+                <span class="value">4 tazas</span>
+            </div>
+            <div class="total-item">
+                <span class="label">Dieta</span>
+                <span class="value">Comidas</span>
+            </div>
+            <div class="total-item">
+                <span class="label">Descanso</span>
+                <span class="value">7 horas</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de envío -->
+    <button class="submit-btn">Enviar</button>  
+
+    <!-- Script JavaScript -->
+    <script>
+        // Clase para manejar la navegación en el sitio
+        class Navigation {
+            constructor() {
+                this.entradarapidaBtn = document.querySelector('a[href="entradarapida.html"]');
+                this.progresodehabitosBtn = document.querySelector('a[href="progresodehabitos.html"]');
+                this.revisionBtn = document.querySelector('a[href="revision.html"]');
+                this._bindEvents(); // Llama a la función para vincular los eventos
+            }
+
+            _bindEvents() {
+                // Agrega eventos de clic a cada enlace de navegación
+                this.entradarapidaBtn.addEventListener('click', this.redirectToEntradarapida.bind(this));
+                this.progresodehabitosBtn.addEventListener('click', this.redirectToProgresodehabitos.bind(this));
+                this.revisionBtn.addEventListener('click', this.redirectToRevision.bind(this));
+            }
+
+            redirectToEntradarapida() {
+                window.location.href = 'entradarapida.html'; // Redirige al enlace de entrada rápida
+            }
+
+            redirectToProgresodehabitos() {
+                window.location.href = 'progresodehabitos.html'; // Redirige al enlace de progreso de hábitos
+            }
+
+            redirectToRevision() {
+                window.location.href = 'revision.html'; // Redirige al enlace de revisión
+            }
+            redirectToRevision() {
+                window.location.href = 'crearhabitos.html'; // Redirige al enlace crear habito
+            }
+        }
+
+        // Clase para manejar los pasos en el seguimiento de hábitos
+        class Steps {
+            constructor() {
+                this.steps = document.querySelectorAll('.step'); // Selecciona todos los elementos con la clase 'step'
+                this._displaySteps(); // Llama a la función para mostrar los pasos
+            }
+
+            _displaySteps() {
+                // Muestra los pasos y agrega un evento de clic a cada uno
+                this.steps.forEach(step => {
+                    step.addEventListener('click', () => {
+                        alert(`Has seleccionado: ${step.querySelector('h2').textContent}`); // Muestra un mensaje con el nombre del paso seleccionado
+                    });
+                });
+            }
+        }
+
+        // Clase para manejar la barra de descargas
+        class Footer {
+            constructor() {
+                this.downloadButtons = document.querySelectorAll('.download-button'); // Selecciona todos los botones de descarga
+                this._bindEvents(); // Llama a la función para vincular los eventos
+            }
+
+            _bindEvents() {
+                // Agrega eventos de clic a cada botón de descarga
+                this.downloadButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        alert('Descargando aplicación...'); // Muestra un mensaje cuando se hace clic en el botón de descarga
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new Navigation(); // Instancia la clase Navigation
+            new Steps(); // Instancia la clase Steps
+            new Footer(); // Instancia la clase Footer
+        });
+    </script>
+</main>
+
+</body>
+</html>

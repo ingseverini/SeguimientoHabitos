@@ -1,0 +1,126 @@
+/* Alineación y estilos generales */
+body {
+    background-color: #f3d8d8; /* White Swan */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px; /* Margen derecho e izquierdo */
+}
+
+.box {
+    background-color: #96ebe3; /* WhiteCap Gray */
+    padding: 30px; /* Incrementado el padding para ajustarse a las proporciones más grandes */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ajustado para que la caja ocupe todo el ancho disponible del contenedor */
+    max-width: 900px; /* Tamaño máximo para evitar distorsión */
+    text-align: left;
+    margin: 25px 0; /* Margen superior e inferior para la caja */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.header span {
+    margin-left: 20px; /* Ajuste para espacios entre los elementos */
+}
+
+.habit-creation h3 {
+    font-size: 2.8em; /* "¿Cuál es tu hábito?" */
+    margin-bottom: 20px;
+}
+
+.habit-description {
+    font-size: 2.4em; /* "Salir a correr" */
+    margin-bottom: 20px;
+}
+
+.frequency-question {
+    font-size: 2.8em; /* "¿Con qué frecuencia?" */
+    margin-bottom: 20px;
+}
+
+.frequency-options {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las opciones se acomoden en varias líneas si es necesario */
+    gap: 10px; /* Espaciado uniforme entre las opciones */
+}
+
+.option {
+    background-color: #f8f9fa; /* Fondo claro */
+    border: 1px solid #ccc; /* Borde para definir el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombreado suave */
+    flex-basis: calc(50% - 10px); /* Ajuste de ancho para que las opciones se acomoden en dos columnas */
+    max-width: calc(50% - 10px); /* Ajuste máximo para evitar distorsión */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 15px; /* Espaciado entre las opciones */
+}
+
+.circle-input {
+    display: none; /* Oculta el botón de radio original */
+}
+
+label {
+    font-size: 1.5em; /* Tamaño del texto */
+    cursor: pointer;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.option:hover {
+    background-color: #e9ecef; /* Fondo ligeramente más oscuro al pasar el cursor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Resalta más la sombra */
+}
+
+.circle-input:checked + label {
+    background-color: #28a745; /* Fondo verde para la opción seleccionada */
+    color: #fff; /* Texto blanco */
+    border-color: #218838; /* Borde verde más oscuro */
+    box-shadow: 0px 4px 8px rgba(0, 128, 0, 0.4); /* Sombra más intensa */
+}
+
+.green {
+    background-color: #28a745; /* Verde */
+}
+
+.gray {
+    background-color: #6c757d; /* Gris */
+}
+
+.days-selection {
+    display: flex;
+    flex-direction: column; /* Asegura que los días estén alineados verticalmente */
+    gap: 10px; /* Espaciado uniforme entre los días */
+    font-size: 1.5em; /* Ajuste del tamaño del texto para los días de la semana */
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el día y el checkbox estén bien alineados */
+}
+
+label {
+    cursor: pointer;
+    margin-right: 10px; /* Espaciado adicional entre texto y checkbox */
+}
+
+input[type="checkbox"] {
+    width: 16px; /* Ajuste de tamaño para el cuadro de selección */
+    height: 16px;
+}

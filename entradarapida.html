@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada Rápida</title>
+    <link rel="stylesheet" href="estilos3.css">
+</head>
+<body>
+
+    <div class="habit-tracker-screen">
+        <div class="header">
+            <div class="header-right">
+                <ul>
+                    <li><a href="index.html">Rastreador de hábitos</a></li>
+                    <li><a href="revison.html">Revisión</a></li>
+                    <li><a href="crear_habito.html">Crear hábito</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-section">
+            <h2 class="center-text">Entrada rápida</h2>
+            <p class="center-text highlight">Hoy</p> <!-- "Hoy" centrado -->
+            <button class="add-habit-btn">Añadir un nuevo hábito</button> <!-- Botón de añadir hábito -->
+
+
+           
+            <section class="habits">
+
+                <section class="habit-entry">
+                    <!-- Imagen a la izquierda -->
+                    <img src="imagenes/Gota de Agua.png" alt="Vasos de Agua Icon">
+                    <!-- Contenedor del título y botón -->
+                    <div class="habit-details">
+                        <h3>Vasos de Agua</h3>
+                        <p id="water-counter">0/8</p>
+                    </div>
+                    <!-- Botón a la derecha -->
+                    <button onclick="incrementCounter('water')">Añadir</button>
+                </section>
+            
+                <section class="habit-entry">
+                    <!-- Imagen a la izquierda -->
+                    <img src="imagenes/Ejercicio.png" alt="Minutos de Ejercicio Icon">
+                    <!-- Contenedor del título y botón -->
+                    <div class="habit-details">
+                        <h3>Minutos de Ejercicio</h3>
+                        <p id="exercise-counter">0/20</p>
+                    </div>
+                    <!-- Botón a la derecha -->
+                    <button onclick="incrementCounter('exercise')">Añadir</button>
+                </section>
+                
+                <section class="habit-entry">
+                    <!-- Imagen a la izquierda -->
+                    <img src="imagenes/Meditacion.png" alt="Minutos de Meditación Icon">
+                    <!-- Contenedor del título y botón -->
+                    <div class="habit-details">
+                        <h3>Minutos de Meditación</h3>
+                        <p id="meditation-counter">0/10</p>
+                    </div>
+                    <!-- Botón a la derecha -->
+                    <button onclick="incrementCounter('meditation')">Añadir</button>
+                </section>
+                
+                <section class="habit-entry">
+                    <!-- Imagen a la izquierda -->
+                    <img src="imagenes/Durmiendo.png" alt="Horas de Sueño Icon">
+                    <!-- Contenedor del título y botón -->
+                    <div class="habit-details">
+                        <h3>Horas de Sueño</h3>
+                        <p id="sleep-counter">0/8</p>
+                    </div>
+                    <!-- Botón a la derecha -->
+                    <button onclick="incrementCounter('sleep')">Añadir</button>
+                </section>
+                
+                                 
+                </section>
+            </section>
+
+            
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

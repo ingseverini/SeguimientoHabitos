@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioHabits</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+   <!-- Sección principal -->
+   <div id="main-screen">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="https://www.figma.com/proto/1vz1ll8QCYigCXDcA04HKL/Untitled?node-id=6-2&node-type=canvas&t=bo3imrchJEjnpyY7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A2">Biohabits</a>
+                <a href="https://support.google.com/?hl=es">Soporte</a>
+                <a href="https://psicologamariapaula.com/2023/07/22/habitos-estilo-vida-saludable/">Blog</a>
+            </div>
+            <div class="nav-right">
+                <button class="nav-btn" id="signup-btn">Inscríbete</button>
+                <button class="nav-btn" id="login-btn">Iniciar sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <section class="main-content">
+        <h1>Transforma tus hábitos y crea una vida más plena. Cada paso cuenta, empieza hoy</h1>
+        <p>Potencia tus hábitos y logra tus objetivos con nuestra aplicación de seguimiento de hábitos diseñada para ti.</p>
+        <div class="join-button">
+            <button class="nav-btn" id="join-btn">Únete a nosotros</button>
+        </div>
+    </section>
+</div>
+
+<!-- Pantalla secundaria -->
+<div id="secondary-screen" style="display: none;">
+    <div class="centered-card">
+        <h2>Bienvenidos a BioHabits</h2>
+        <p>Inicia sesión y comienza a construir hábitos saludables con BioHabits.</p>
+        <div class="card-buttons">
+            <button class="google-btn" onclick="AuthService.loginWithGoogle()">Continuar con Gmail</button>
+            <button class="facebook-btn" onclick="AuthService.loginWithFacebook()">Ingresar con Facebook</button>
+        </div>
+    </div>
+</div>
+
+<!-- Botones de Google y Facebook ocultos -->
+<button class="google-btn" style="display: none;" onclick="AuthService.loginWithGoogle()">Continuar con Google</button>
+
+<button class="facebook-btn" style="display: none;" onclick="AuthService.loginWithFacebook()">Continuar con Facebook</button>
+
+<!-- Tarjeta de inicio de sesión con Google -->
+<div id="google-login-card" style="display: none;">
+    <div class="centered-card">
+        <h2>Inicia Sesión con Google</h2>
+        <section class="biohabits-section">
+            <h3>Biohabits</h3>
+            <div class="email-input">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <a href="#" class="forgot-email">¿Has olvidado tu correo electrónico?</a>
+            <p class="info-text">Este mensaje es claro y formal, alentando a los usuarios a revisar la documentación importante antes de empezar a utilizar la aplicación.</p>
+            <a href="#" class="create-account">Crear tu cuenta</a>
+            <button class="nav-btn" id="next-btn" onclick="AuthService.proceedToNext()">Siguiente</button>
+        </section>
+    </div>
+</div>
+
+<!-- Tarjeta de inicio de sesión con Facebook -->
+<div id="facebook-login-card" style="display: none;">
+    <div class="centered-card">
+        <h2>Inicia Sesión con Facebook</h2>
+        <section class="biohabits-section">
+            <h3>Biohabits</h3>
+            <div class="email-input">
+                <label for="facebook-email">Correo Electrónico</label>
+                <input type="email" id="facebook-email" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <a href="#" class="forgot-email">¿Has olvidado tu correo electrónico?</a>
+            <p class="info-text">Este mensaje es claro y formal, alentando a los usuarios a revisar la documentación importante antes de empezar a utilizar la aplicación.</p>
+            <a href="#" class="create-account">Crear tu cuenta</a>
+            <button class="nav-btn" id="fb-next-btn" onclick="AuthService.proceedToNext()">Iniciar Sesion</button>
+        </section>
+    </div>
+</div>
+
+<script>
+// Clase AuthService para manejo de autenticación
+class AuthService {
+    static loginWithGoogle() {
+        document.getElementById('google-login-card').style.display = 'block';
+        document.getElementById('secondary-screen').style.display = 'none';
+    }
+
+    static loginWithFacebook() {
+        document.getElementById('facebook-login-card').style.display = 'block';
+        document.getElementById('secondary-screen').style.display = 'none';
+    }
+
+    static proceedToNext() {
+        window.location.href = 'funcionalidades.html';
+    }
+}
+</script>
+
+<!-- Sección de pasos a seguir -->
+<section class="steps-section">
+    <div class="step">
+        <h2>Planifica</h2>
+        <p>Establecer metas y diseñar un cronograma que defina las acciones necesarias para alcanzarlas asegurando un enfoque claro y estructurado.</p>
+    </div>
+    <div class="step">
+        <h2>Actúa</h2>
+        <p>Implementar las acciones planificadas con determinación y disciplina, manteniendo el compromiso con los objetivos establecidos.</p>
+    </div>
+    <div class="step">
+        <h2>Transforma</h2>
+        <p>Evolucionar y mejorar a través de la reflexión y el aprendizaje, adaptando tus hábitos y rutinas para lograr un cambio significativo en tu vida.</p>
+    </div>      
+</section>
+
+<!-- Sección de seguimiento de rutinas -->
+<section class="tracking-routines">
+    <h2>HAZ SEGUIMIENTO A TUS RUTINAS DIARIAS</h2>
+    <div class="images-container">
+        <img src="imagenes/rutina 1.svg" alt="Imagen 1" class="routine-image">
+        <img src="imagenes/rutina 2.svg" alt="Imagen 2" class="routine-image">
+    </div>
+</section>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="download-buttons">
+        <a href="https://www.apple.com/app-store/" class="download-button" target="_blank">
+            <img src="imagenes/bxl-apple.svg" alt="iPhone" class="download-image">
+            <p>Para iPhone</p>
+        </a>
+    
+        <a href="https://play.google.com/store" class="download-button" target="_blank">
+            <img src="imagenes/bxl-android.svg" alt="Android" class="download-image">
+            <p>Para Android</p>
+        </a>
+    </div>
+
+    <div class="footer-links">
+        <a href="https://web.whatsapp.com/">Contactar con el servicio de asistencia</a>
+        <a href="https://termify.io/es/generador-politica-de-privacidad?gad_source=1&gclid=Cj0KCQjwvpy5BhDTARIsAHSilylwiToy_s0TWdrA23x-cuhLNGp1WO6s9QBjz9XrL-jrFDhGZPeDLGgaAj6EEALw_wcB">Política de Privacidad</a>
+        <a href="https://medlineplus.gov/spanish/ency/article/002393.htm">Resumen Informativo</a>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright 2024 Proyecto de Software Actividad 4. Todos los Derechos Reservados</p>
+        <p>Esta App es una marca registrada ante las respectivas autoridades.</p>
+        <p>Para mayor información puedes contactarnos al 301-2943728.</p>
+    </div>
+
+    <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="imagenes/bxl-facebook-circle.svg" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://wa.me/3012943728" target="_blank">
+            <img src="imagenes/bxl-whatsapp.svg" alt="WhatsApp" class="social-icon">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="imagenes/bxl-youtube.svg" alt="YouTube" class="social-icon">
+        </a>
+        
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
